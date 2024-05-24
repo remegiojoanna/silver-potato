@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metamorphic Piano Melodies</title>
+<style>
+  body {
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    font-size: medium;
+  }
+  
+  h1 {
+    color: ghostwhite;
+  }
+  
+  audio {
+    font-size: 12px;
+    color: seagreen;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    clear: both; /* Ensure each audio starts on a new line */
+  }
+
+  /* Styling for the audio controls */
+  audio::-webkit-media-controls-start-playback-button {
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
+
+  /* Adjust the margin-top to move all audio elements down */
+  #audio-container {
+    text-align: left;
+    margin-top: 100px; /* Adjust the margin-top to move all audio elements down */
+  }
+
+  /* Style for the additional text */
+  #additional-text {
+    font-size: 1.4em; /* Adjustable font size */
+    font-family: cursive; /* Change font family to cursive */
+  }
+  
+  /* Style for the text on the right side of the first two audios */
+  .audio-text {
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px;
+    color: white;
+    font-size: smaller;
+  }
+</style>
+</head>
+<body>
+
+<h1>playlist.mp3</h1>
+
+<p>"When Words Don't Rhyme, Melody Will Chime"</p>
+
+<!-- Additional text -->
+<div id="additional-text">
+  <p style="clear: both; margin-bottom: 5px;"></p>
+</div>
+
+<div id="audio-container">
+  <div style="margin-bottom: 20px;">
+    <p style="clear: both; margin-bottom: 5px;">If You Don't Love Yourself</p>
+    <div class="audio-text">"Music, a serenity of words,</div>
+    <audio controls>
+      <source src="/if you don't love yourself.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <div style="margin-bottom: 20px;">
+    <p style="clear: both; margin-bottom: 5px;">I Do Too</p>
+    <div class="audio-text">Peace it brings with every chord.</div>
+    <audio controls>
+      <source src="/i do too.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <div style="margin-bottom: 20px;">
+    <p style="clear: both; margin-bottom: 5px;">Who Says</p>
+    <div class="audio-text">Tune may change throughout,</div>
+    <audio controls>
+      <source src="/who says.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <div style="margin-bottom: 20px;">
+    <p style="clear: both; margin-bottom: 5px;">Scars To Your Beautiful</p>
+    <div class="audio-text">But it's music I can't live without.</div>
+    <audio controls>
+      <source src="/scars to your beautiful.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <div style="margin-bottom: 20px;">
+    <p style="clear: both; margin-bottom: 1px;">Change</p>
+    <div class="audio-text">–Joanna</div>
+    <audio controls>
+      <source src="/change.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+</div>
+
+<script>
+  // Get all audio elements
+  const audios = document.querySelectorAll('audio');
+
+  // Add event listeners to each audio element
+  audios.forEach(audio => {
+    audio.addEventListener('play', () => {
+      // Pause all other audio elements
+      audios.forEach(otherAudio => {
+        if (otherAudio !== audio) {
+          otherAudio.pause();
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
